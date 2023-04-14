@@ -1,0 +1,13 @@
+﻿@model IEnumerable<hospital_project4.Models.FeeDto>
+@{
+    ViewBag.Title = "List Of Fees";
+}
+
+<h2>List Of Fees</h2>
+@foreach (var fee in Model)
+{
+    <h2>Time: @fee.FeeName</h2>
+    <div>Cost: $@fee.Price</div>
+    <div>Parking Type: @fee.LotName</div>
+}
+

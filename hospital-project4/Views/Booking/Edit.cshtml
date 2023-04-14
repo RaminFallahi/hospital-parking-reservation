@@ -1,0 +1,27 @@
+﻿@model hospital_project4.Models.BookingDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Booking</h2>
+<form action="/Booking/Update/@Model.BookingId" method="POST">
+    <input type="hidden" name="BookingId" value="@Model.BookingId" />
+    <div>
+        <label>Name:</label> <input name="BookingName" value="@Model.BookingName" />
+    </div>
+    <div>
+        <label>Date:</label> <input type="datetime-local" name="Date" value="@Model.Date.ToString("yyyy-MM-ddTHH:mm")" />
+    </div>
+    <div>
+        <label>Parking Type:</label>
+        <select name="FeeId">
+            @foreach (var fee in ViewBag.Fees)
+            {
+                <option value="@fee.FeeId" @(Model.FeeId == fee.FeeId ? "selected" : "")>@fee.FeeName (@fee.LotName) - @fee.Price</option>
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update" />
+    </div>
+</form>

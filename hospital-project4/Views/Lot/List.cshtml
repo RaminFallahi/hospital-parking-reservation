@@ -1,0 +1,12 @@
+﻿@model IEnumerable<hospital_project4.Models.Lot>
+
+@{
+    ViewBag.Title = "List of Parking Lots";
+}
+
+<h2>List of Parkings</h2>
+@foreach (var Lot in Model)
+{
+    <h3>Type: @Lot.LotName</h3>
+}
+

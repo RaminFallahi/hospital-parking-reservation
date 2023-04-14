@@ -1,0 +1,34 @@
+﻿@model hospital_project4.Models.BookingDto
+
+@{
+    ViewBag.Title = "Delete Confirmation";
+}
+
+<h2>Delete Confirmation</h2>
+
+<p>Are you sure you want to delete this booking?</p>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>@Model.BookingName</td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>@Model.Date</td>
+    </tr>
+    <tr>
+        <td>Parking Type: </td>
+        <td>@Model.FeeName (@Model.LotName)</td>
+        <td>Hour and Price: </td>
+        <td>$@Model.Price</td>
+    </tr>
+</table>
+
+<form action="/Booking/DeleteConfirm/@Model.BookingId" method="POST">
+    <input type="submit" value="Delete" />
+</form>
+
+<p>
+    <a href="/Booking/List">Cancel</a>
+</p>

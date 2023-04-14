@@ -1,0 +1,15 @@
+﻿@model IEnumerable<hospital_project4.Models.BookingDto>
+@{
+    ViewBag.Title = "List Of Bookings";
+}
+
+<h2>List Of Bookings</h2>
+<a href="/Booking/new">Go Back to Booking Page</a>
+
+@foreach (var Booking in Model)
+{
+    <h2><a href="/Booking/Details/@Booking.BookingId">Booked By: @Booking.BookingName</a></h2>
+    <div>Booking Date: @Booking.Date</div>
+    //<div>Cost: $@Booking.Price</div>
+    <div>Parking Type: @Booking.LotName</div>
+}

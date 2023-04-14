@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Booking</h2>
+<form action="/Booking/Create" method="POST">
+    <div>
+        <label>Name:</label> <input name="BookingName" />
+    </div>
+    <div>
+        <label>Date:</label> <input type="datetime-local" name="Date" />
+    </div>
+    <div>
+        <label>Parking Type:</label>
+        <select name="FeeId">
+            @foreach (var fee in ViewBag.Fees)
+            {
+                <option value="@fee.FeeId">@fee.FeeName (@fee.LotName) - @fee.Price</option>
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+</form>

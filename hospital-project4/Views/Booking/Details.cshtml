@@ -1,0 +1,23 @@
+﻿@model hospital_project4.Models.BookingDto
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Show Booking</h2>
+<ul>
+    <li>
+        <a href="/Booking/list">Go Back to Booking List</a>
+    </li>
+    <li>
+        <a href="/Booking/Edit/@Model.BookingId">Update The Booking</a>
+    </li>
+    <li>
+        <a href="/Booking/Delete/@Model.BookingId">Delete The Booking</a>
+    </li>
+</ul>
+<h2>Booked By: @Model.BookingName</h2>
+<div>Booking Date: @Model.Date</div>
+<div>Cost: $@Model.Price</div>
+<div>Parking Type: @Model.LotName</div>
+
+
